@@ -1,9 +1,15 @@
 import '../styles/global.css';
+import { ProfileProvider } from '../contexts/ProfileContext';
+import { StyleProvider } from '../contexts/StyleContext';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Component {...pageProps} />
+    <ProfileProvider>
+      <StyleProvider>
+        <Component {...pageProps} />
+      </StyleProvider>
+    </ProfileProvider>
   );
 }
 
-export default MyApp
+export default MyApp;

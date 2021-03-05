@@ -7,6 +7,8 @@
 :root {
   --white: #fff;
   --background: #f2f3f5;
+  --dark-background: #282a36;
+  --dark-container: #191a21;
   --gray-line: #dcdde0;
   --text: #666;
   --text-highlight: #b3b9ff;
@@ -33,6 +35,7 @@
 body {
   background-color: var(--background);
   color: var(--text);
+  height: 100%;
 }
 
 body, input, textarea, button {

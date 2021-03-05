@@ -1,67 +1,49 @@
-import { ExperienceBar } from '../components/ExperienceBar';
-import { Profile } from '../components/Profile';
-import { CountdownProvider } from '../contexts/CountdownContext';
-import { ChallengesProvider } from '../contexts/ChallengesContext';
-import { CompletedChallenges } from '../components/CompletedChallenges';
-import { Countdown } from '../components/Countdown';
-import { ChallengeBox } from '../components/ChallengeBox';
-
+import GoogleLogin, { GoogleLoginResponse } from 'react-google-login';
+import { useContext } from 'react';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
-import { GetServerSideProps } from 'next';
-
+import { ProfileContext } from '../contexts/ProfileContext';
+import { DarkMode } from '../components/DarkMode';
 import styles from '../styles/pages/Home.module.css';
 
-interface HomeProps {
-  level: number;
-  currentExperience: number;
-  challengesCompleted: number;
-}
+export default function Home() {
+  const router = useRouter();
+  const { handleProfileData } = useContext(ProfileContext)
 
-export default function Home({
-  level,
-  currentExperience,
-  challengesCompleted,
-}: HomeProps) {
+  function responseGoogle(response: GoogleLoginResponse) {
+    const { profileObj: {
+      name,
+      imageUrl,
+    } } = response;
+    handleProfileData(imageUrl, name)
+    router.push(`/game`);
+  }
+
   return (
-    <ChallengesProvider
-      level={ level }
-      currentExperience={ currentExperience }
-      challengesCompleted={ challengesCompleted }
-    >
-      <div className={ styles.container }>
-        <Head>
-          <title>Inicio | move.it</title>
-        </Head>
-        <ExperienceBar />
-        <CountdownProvider>
-          <section>
-            <div>
-              <Profile />
-              <CompletedChallenges />
-              <Countdown />
-            </div>
-            <div>
-              <ChallengeBox />
-            </div>
-          </section>
-        </CountdownProvider>
+    <div className={ styles.container }>
+      <Head>
+        <title>Inicio | move.it</title>
+      </Head>
+      <DarkMode />
+      <div>
+        <div className={ styles.contentContainer }>
+          <img src='logo-full.svg' alt="Move.It"/>
+          <em className={ styles.subtitle }>A aplicação que se preocupa com DEV</em>
+        </div>
       </div>
-    </ChallengesProvider>
-  )
-}
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const {
-    level,
-    currentExperience,
-    challengesCompleted,
-  } = context.req.cookies;
-
-  return {
-    props: {
-      level: Number(level),
-      currentExperience: Number(currentExperience),
-      challengesCompleted: Number(challengesCompleted),
-    },
-  };
+      <div>
+        <div className={ styles.contentContainer }>
+          <p className={ styles.warning }>
+            Para fazer login é necessário ter uma conta no google
+          </p>
+          <GoogleLogin
+            className={ styles.googleLogin }
+            clientId='1058573758051-ogi101li29fdpo4qo89e1j8dna2mgpqv.apps.googleusercontent.com'
+            buttonText="Entre com google"
+            onSuccess={ responseGoogle }
+          />
+        </div>
+      </div>
+    </div>
+  );
 }

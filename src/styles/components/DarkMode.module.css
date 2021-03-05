@@ -1,0 +1,37 @@
+.darkModeBtn {
+  background-color: black;
+  border: none;
+  border-bottom: 2px solid var(--blue-dark);
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+  color: white;
+  font-weight: 600;
+  opacity: 0.3;
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  width: 10rem;
+}
+
+.darkModeBtn:hover {
+  opacity: 1;
+}
+
+.clearModeBtn {
+  background-color: white;
+  border: none;
+  border-bottom: 2px solid var(--blue);
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+  color: black;
+  font-weight: 600;
+  opacity: 0.3;
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  width: 10rem;
+}
+
+.clearModeBtn:hover {
+  opacity: 1;
+}
