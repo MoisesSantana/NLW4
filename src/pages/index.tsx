@@ -3,7 +3,6 @@ import { useContext } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { ProfileContext } from '../contexts/ProfileContext';
-import { DarkMode } from '../components/DarkMode';
 import styles from '../styles/pages/Home.module.css';
 
 export default function Home() {
@@ -24,7 +23,6 @@ export default function Home() {
       <Head>
         <title>Inicio | move.it</title>
       </Head>
-      <DarkMode />
       <div>
         <div className={ styles.contentContainer }>
           <img src='logo-full.svg' alt="Move.It"/>

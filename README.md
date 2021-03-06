@@ -1,34 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Move It
 
-## Getting Started
+Move It é um projeto de uma semana proposta pela RocketSeat para ver e aperfeiçoar os conhecimentos de front end, foi utilizada muitas tecnologias como React Hooks, Context API, Type Script, Next.js entre outras, e o incentivo para levar o projeto para o próximo nível (bordão do Diego) responsável por nos guiar nesse projeto.
 
-First, run the development server:
+## Proposta do projeto
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+A proposta do Move It era criar uma aplicação web não responsiva, onde era possível iniciar um contador de 5 minutos, após o timer zerar o navegador envia um alerta para fazer algum exercício, você pode concluir ou rejeitar, possui uma barra de xp e após avançar de nível é mostrado uma janela para parabenizar, para não perder o progresso os dados são guardados nos cookies do navegador.
+## Avançando para o próximo nível
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Para exercitar os conhecimentos adquiridos e fazer uma aplicação mais completa fiz alguns incrementos ao projeto como:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- Tela de login
+- Login pela conta do google
+- Rota para a tela do jogo
+- Aplicação responsiva
+- Dark Mode
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### Imagens do projeto
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+#### Desktop
 
-## Learn More
+![Tela de Login](./imagem1-login.png)
 
-To learn more about Next.js, take a look at the following resources:
+##### Clean Mode
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![Tela game Clean Mode](./imagem1-game-clear.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+##### Dark Mode
 
-## Deploy on Vercel
+![Tela game Dark Mode](./imagem1-game-dark.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### Mobile
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![tela de Login](./imagem2-login.png)
+
+##### Clean Mode
+
+![Tela game Clean Mode](./imagem2-game-clear.png)
+
+##### Dark Mode
+
+![Tela game Dark Mode](./imagem2-game-dark.png)
+
+## Rodando o projeto em sua maquina
+
+- ``` git clone ```
+- ``` npm install ```
+- ``` npm run dev ```
+
+Você também pode utilizar a aplicação acessando:
+
+> https://nlw4-moveit.netlify.app
