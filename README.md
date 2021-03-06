@@ -45,8 +45,8 @@ Para exercitar os conhecimentos adquiridos e fazer uma aplicação mais completa
 
 - ``` git clone ```
 - ``` npm install ```
-- ``` npm run dev ```
+- ``` npm run dev ``` 
 
 Você também pode utilizar a aplicação acessando:
 
-> https://nlw4-moveit.netlify.app
+> https://nlw4-moveit-black.vercel.app
